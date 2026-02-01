@@ -13,4 +13,4 @@ def adam_step(param, grad, m, v, t, lr=1e-3, beta1=0.9, beta2=0.999, eps=1e-8):
     v_h = v / (1 - beta2**t)
 
     param = param - lr * (m_h / (np.sqrt(v_h) + eps))
-    return (param, m, v)
+    return (param, m, v) # not returning bias corrected m_t, v_t makes sense as just for LR update
